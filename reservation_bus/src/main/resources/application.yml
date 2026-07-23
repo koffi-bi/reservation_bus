@@ -3,21 +3,26 @@ spring:
     name: reservation_bus
 
   datasource:
-    url: ${SPRING_DATASOURCE_URL}
-    username: ${SPRING_DATASOURCE_USERNAME}
-    password: ${SPRING_DATASOURCE_PASSWORD}
+    url: jdbc:postgresql://localhost:5432/reservation_bus
+    username: postgres
+    password: 12345678
     driver-class-name: org.postgresql.Driver
 
   jpa:
     hibernate:
       ddl-auto: update
+    defer-datasource-initialization: true
     show-sql: true
     properties:
       hibernate:
         format_sql: true
 
+  sql:
+    init:
+      mode: always
+
 server:
-  port: ${PORT:8080}
+  port: 8080
 
 springdoc:
   swagger-ui:

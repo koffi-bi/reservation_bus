@@ -6,7 +6,8 @@
 // le corriger — le reste du code ne fait qu'utiliser ces constantes.
 // ============================================================================
 
-export const BASE_URL = 'http://localhost:8080';
+export const BASE_URL =
+  import.meta.env.VITE_API_URL || 'http://localhost:8080';
 
 export const ENDPOINTS = {
   // Trajets (trip-controller)
